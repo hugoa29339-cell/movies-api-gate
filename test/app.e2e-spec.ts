@@ -18,7 +18,8 @@ describe('Movies API (e2e)', () => {
   });
 
   afterAll(async () => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(r => setTimeout(r, 3000));  // Espera sync/DB ready
+    await app.close();
   });
 
   it('GET /api/movies -> 200 y estructura correcta', async () => {
